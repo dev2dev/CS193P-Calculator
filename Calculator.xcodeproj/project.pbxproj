@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD74111413C107D600B152DD /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = BD74111313C107D600B152DD /* CalculatorBrain.m */; };
 		BDCED66F13C1023A00687C1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCED66E13C1023A00687C1A /* UIKit.framework */; };
 		BDCED67113C1023A00687C1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCED67013C1023A00687C1A /* Foundation.framework */; };
 		BDCED67313C1023A00687C1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCED67213C1023A00687C1A /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD74111213C107D600B152DD /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		BD74111313C107D600B152DD /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
 		BDCED66A13C1023A00687C1A /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCED66E13C1023A00687C1A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BDCED67013C1023A00687C1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				BDCED68313C1023A00687C1A /* CalculatorViewController.h */,
 				BDCED68413C1023A00687C1A /* CalculatorViewController.m */,
 				BDCED68613C1023A00687C1A /* CalculatorViewController.xib */,
+				BD74111213C107D600B152DD /* CalculatorBrain.h */,
+				BD74111313C107D600B152DD /* CalculatorBrain.m */,
 				BDCED67513C1023A00687C1A /* Supporting Files */,
 			);
 			path = Calculator;
@@ -263,6 +268,7 @@
 				BDCED67C13C1023A00687C1A /* main.m in Sources */,
 				BDCED67F13C1023A00687C1A /* CalculatorAppDelegate.m in Sources */,
 				BDCED68513C1023A00687C1A /* CalculatorViewController.m in Sources */,
+				BD74111413C107D600B152DD /* CalculatorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,7 +39,11 @@
 - (double)performOperation:(NSString *)operation{
     if([operation isEqual:@"sqrt"]){
         operand = sqrt(operand);
-    } else{
+    }else if([operation isEqual:@"pow"]){
+        operand =operand * operand;
+    }else if([operation isEqual:@"+/-"]){
+        operand = operand * (double)-1;
+    }else{
         [self performWaitingOperation];
         waitingOperation = operation;
         waitingOperand = operand;

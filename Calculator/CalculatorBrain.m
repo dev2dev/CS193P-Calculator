@@ -43,6 +43,8 @@
         operand =operand * operand;
     }else if([operation isEqual:@"+/-"]){
         operand = operand * (double)-1;
+    }else if([operation isEqual:@"ln"]){
+        operand = log(operand);
     }else{
         [self performWaitingOperation];
         waitingOperation = operation;

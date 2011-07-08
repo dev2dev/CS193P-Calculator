@@ -10,9 +10,8 @@
 
 
 @implementation CalculatorBrain
-- (void)setOperand:(double)anOperand{
-    operand = anOperand;
-}
+@synthesize operand;
+
 - (void)performWaitingOperation{
     if([@"+" isEqual:waitingOperation]){
         operand = waitingOperand + operand;

@@ -15,7 +15,11 @@
     NSString *waitingOperation;
     double waitingOperand;
 }
+
 @property double operand;
+@property double waitingOperand;
+
 - (void)setOperand:(double)anOperand;
 - (double)performOperation:(NSString *)operation;
+
 @end

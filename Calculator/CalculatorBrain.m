@@ -11,6 +11,7 @@
 
 @implementation CalculatorBrain
 @synthesize operand;
+@synthesize waitingOperand;
 
 - (void)performWaitingOperation{
     if([@"+" isEqual:waitingOperation]){

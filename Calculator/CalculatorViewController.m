@@ -10,6 +10,7 @@
 
 @interface CalculatorViewController()
 @property (readonly) CalculatorBrain *brain;
+@property (copy) NSString *digit;
 @end
 
 @implementation CalculatorViewController
@@ -24,6 +25,7 @@
 - (IBAction)digitPressed:(UIButton *)sender{
     //NSString *digit = [[sender titleLabel] text];
     NSString *digit = sender.titleLabel.text;
+    
     if(userIsInTheMiddleOfTypingANumber){
         //[display setText:[[display text] stringByAppendingString:digit]];
         display.text = [display.text stringByAppendingString:digit];

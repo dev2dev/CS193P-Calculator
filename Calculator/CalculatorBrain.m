@@ -12,6 +12,7 @@
 @implementation CalculatorBrain
 
 @synthesize operand;
+@synthesize storeOperand;
 @synthesize waitingOperand;
 @synthesize waitingOperation;
 
@@ -37,6 +38,18 @@
         operand = sin(operand);
     }else if([operation isEqual:@"cos"]){
         operand = cos(operand);
+    }else if([operation isEqual:@"1/x"]){
+        if (operand) {
+            operand = (double)1/operand;
+        }
+    }else if([operation isEqual:@"Store"]){
+        storeOperand = operand;
+    }else if([operation isEqual:@"Recall"]){
+        operand = storeOperand;
+    }else if([operation isEqual:@"Mem+"]){
+        storeOperand += operand;
+    }else if([operation isEqual:@"C"]){
+        operand = 0;
     }else{
         [self performWaitingOperation];
         waitingOperation = operation;

@@ -11,11 +11,13 @@
 
 @interface CalculatorBrain : NSObject {
     double operand;
+    double storeOperand;
     NSString *waitingOperation;
     double waitingOperand;
 }
 
 @property double operand;
+@property double storeOperand;
 @property (readonly) double waitingOperand;
 @property (nonatomic, retain) NSString *waitingOperation;
 

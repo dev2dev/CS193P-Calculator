@@ -15,6 +15,12 @@
 @synthesize storeOperand;
 @synthesize waitingOperand;
 @synthesize waitingOperation;
+@synthesize expression;
+
+- (void)dealloc{
+    [waitingOperation release];
+    [super dealloc];
+}
 
 - (void)performWaitingOperation{
     if([@"+" isEqual:waitingOperation]){
@@ -50,15 +56,12 @@
         storeOperand += operand;
     }else if([operation isEqual:@"C"]){
         operand = 0;
+        storeOperand = 0;
     }else{
         [self performWaitingOperation];
         waitingOperation = operation;
         waitingOperand = operand;
     }
     return operand;
-}
-- (void)dealloc{
-    [waitingOperation release];
-    [super dealloc];
 }
 @end

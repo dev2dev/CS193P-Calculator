@@ -10,16 +10,21 @@
 
 @interface CalculatorViewController()
 @property (readonly) CalculatorBrain *brain;
-@property (copy) NSString *digit;
 @end
 
 @implementation CalculatorViewController
+@synthesize display;
 
 - (CalculatorBrain *)brain{
     if (!brain) {
         brain = [[CalculatorBrain alloc] init];
     }
     return brain;
+}
+- (void)dealloc{
+    [brain release];
+    [display release];
+    [super dealloc];
 }
 
 - (IBAction)digitPressed:(UIButton *)sender{

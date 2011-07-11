@@ -10,16 +10,17 @@
 
 
 @interface CalculatorBrain : NSObject {
-@private
     double operand;
     NSString *waitingOperation;
     double waitingOperand;
 }
 
 @property double operand;
-@property double waitingOperand;
+@property (readonly) double waitingOperand;
+@property (nonatomic, retain) NSString *waitingOperation;
 
 - (void)setOperand:(double)anOperand;
 - (double)performOperation:(NSString *)operation;
+- (void)dealloc;
 
 @end

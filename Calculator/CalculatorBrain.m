@@ -10,8 +10,10 @@
 
 
 @implementation CalculatorBrain
+
 @synthesize operand;
 @synthesize waitingOperand;
+@synthesize waitingOperation;
 
 - (void)performWaitingOperation{
     if([@"+" isEqual:waitingOperation]){
@@ -41,5 +43,9 @@
         waitingOperand = operand;
     }
     return operand;
+}
+- (void)dealloc{
+    [waitingOperation release];
+    [super dealloc];
 }
 @end

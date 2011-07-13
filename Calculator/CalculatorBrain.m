@@ -13,6 +13,8 @@
 
 @synthesize operand;
 @synthesize storeOperand;
+@synthesize radians;
+@synthesize lengthOfDisplay;
 @synthesize waitingOperand;
 @synthesize waitingOperation;
 @synthesize expression;
@@ -32,6 +34,9 @@
     }else if([@"/" isEqual:waitingOperation]){
         if(operand){
             operand = waitingOperand / operand;
+        }else{
+            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Division by zero" message:@"This is now allowed" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+            [alert show];
         }
     }
 }
@@ -47,6 +52,9 @@
     }else if([operation isEqual:@"1/x"]){
         if (operand) {
             operand = (double)1/operand;
+        }else{
+            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Division by zero" message:@"This is now allowed" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+            [alert show];
         }
     }else if([operation isEqual:@"Store"]){
         storeOperand = operand;
@@ -58,9 +66,11 @@
         operand = 0;
         storeOperand = 0;
     }else if([operation isEqual:@"Deg"]){
-        
+        radians = YES;
     }else if([operation isEqual:@"Rad"]){
-        
+        radians = NO;
+    }else if([operation isEqual:@"π"]){
+        operand = M_PI;
     }else{
         [self performWaitingOperation];
         waitingOperation = operation;

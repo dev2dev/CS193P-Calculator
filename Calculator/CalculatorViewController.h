@@ -10,13 +10,13 @@
 #import "CalculatorBrain.h"
 
 @interface CalculatorViewController : UIViewController {
-    IBOutlet UILabel *display;
-    BOOL userIsInTheMiddleOfTypingANumber;
-    
-    
 }
+
 @property (nonatomic, retain) IBOutlet UILabel *display;
+@property (nonatomic, retain) IBOutlet UILabel *mem;
 @property (nonatomic, retain) CalculatorBrain *brain;
+@property BOOL userIsInTheMiddleOfTypingANumber;
+
 
 - (IBAction)digitPressed:(UIButton *)sender;
 - (IBAction)operationPressed:(UIButton *)sender;

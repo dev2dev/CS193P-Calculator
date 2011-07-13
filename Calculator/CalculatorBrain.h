@@ -20,6 +20,8 @@
 
 @property double operand;
 @property double storeOperand;
+@property BOOL radians;
+@property int lengthOfDisplay;
 @property (readonly) double waitingOperand;
 @property (nonatomic, retain) NSString *waitingOperation;
 @property (readonly) id expression;

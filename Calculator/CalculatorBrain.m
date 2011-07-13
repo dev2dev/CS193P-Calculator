@@ -57,6 +57,10 @@
     }else if([operation isEqual:@"C"]){
         operand = 0;
         storeOperand = 0;
+    }else if([operation isEqual:@"Deg"]){
+        
+    }else if([operation isEqual:@"Rad"]){
+        
     }else{
         [self performWaitingOperation];
         waitingOperation = operation;

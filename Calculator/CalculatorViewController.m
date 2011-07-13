@@ -8,23 +8,15 @@
 
 #import "CalculatorViewController.h"
 
-@interface CalculatorViewController()
-@property (readonly) CalculatorBrain *brain;
-@end
-
 @implementation CalculatorViewController
 @synthesize display;
+@synthesize brain;
 
 - (CalculatorBrain *)brain{
     if (!brain) {
         brain = [[CalculatorBrain alloc] init];
     }
     return brain;
-}
-- (void)dealloc{
-    [brain release];
-    [display release];
-    [super dealloc];
 }
 
 - (IBAction)digitPressed:(UIButton *)sender{
@@ -49,6 +41,22 @@
     //double result = [[self brain] performOperation:operation];
     [self.brain performOperation:operation];
     display.text = [NSString stringWithFormat:@"%g", self.brain.operand];
+}
+
+- (void)releaseOutlets{
+    self.display = nil;
+}
+- (void)viewDidLoad{
+    [super viewDidLoad];
+}
+- (void)viewDidUnload{
+    [self releaseOutlets];
+}
+- (void)dealloc{
+    [brain release];
+    [display release];
+    [self releaseOutlets];
+    [super dealloc];
 }
 
 @end
